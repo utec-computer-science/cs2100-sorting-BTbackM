@@ -12,14 +12,24 @@ class sort_algorithms{
     private:
     vector<I>* unsorted = new vector<I>();
     public:
-    sort_algorithms(vector<I>* unsorted){
-        this->unsorted = unsorted;
-    }
+    sort_algorithms(vector<I>* unsorted);
+
+    // Additional methods
+
+    void swap(I *first, I *second);
+
+    // Main methods
 
     void insert_sort();
+    void selection_sort();
 
-    virtual ~sort_algorithms(){};
+    virtual ~sort_algorithms(){
+        unsorted->clear();
+        delete unsorted;
+    };
 };
+
+// Additional methods
 
 template <class I>
 ostream& operator << (ostream& os, const vector<I> & objects);
