@@ -19,13 +19,15 @@ class sort_algorithms{
 
     void swap(I *first, I *second);
     void merge(I left, I middle, I right);
+    int partition(int low, int high);
 
     // Main methods
 
     void insert_sort();
     void selection_sort();
     void bubble_sort();
-    void merge_sort(I left, I right);
+    void merge_sort(int left, int right);
+    void quick_sort(int low,int high);
 
     virtual ~sort_algorithms(){
         unsorted->clear();

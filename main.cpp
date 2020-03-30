@@ -12,7 +12,8 @@ int main(){
     // test.insert_sort(); // Works
     // test.selection_sort(); // Works
     // test.bubble_sort(); // Works
-    test.merge_sort(0, 4);
+    // test.merge_sort(0, 4); // Works
+    test.quick_sort(0, 4);
     cout << *unsorted << endl;
     return 0;
 }

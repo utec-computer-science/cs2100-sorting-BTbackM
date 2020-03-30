@@ -53,6 +53,26 @@ void sort_algorithms<I>::merge(I left, I middle, I right){
         }
 }
 
+template <class I>
+int sort_algorithms<I>::partition(int low,int high){
+    
+    int iter = unsorted->at(high);
+        int i = low - 1;
+
+        for(int j = low; j <= high - 1; j++){
+
+            if(unsorted->at(j) < iter){
+                i++;
+                swap(&unsorted->at(i), &unsorted->at(j));
+            }
+        }
+
+        swap(&unsorted->at(i+1), &unsorted->at(high));
+
+        return (i + 1);
+}
+
+
 // Main methods
 
 template <class I>
@@ -62,7 +82,7 @@ sort_algorithms<I>::sort_algorithms(vector<I>* unsorted){
 
 template <class I>
 void sort_algorithms<I>::insert_sort(){
-    for(auto i = 1 ; i < int(unsorted->size()) ; i++){
+    for(int i = 1 ; i < int(unsorted->size()) ; i++){
         I it = unsorted->at(i);
         int j = i - 1;
         while(j >=0 && unsorted->at(j)>it) {
@@ -98,13 +118,24 @@ void sort_algorithms<I>::bubble_sort(){
 }
 
 template <class I>
-void sort_algorithms<I>::merge_sort(I left, I right){
+void sort_algorithms<I>::merge_sort(int left, int right){
     if (left < right){
         I middle = left + (right - left) / 2;
         merge_sort(left, middle);
         merge_sort(middle + 1, right);
 
         merge(left, middle, right);
+    }
+}
+
+template <class I>
+void sort_algorithms<I>::quick_sort(int low,int high){
+    if (low < high)
+    {
+        int div = partition(low, high);
+
+        quick_sort(low, div - 1);  // Before pi
+        quick_sort(div + 1, high); // After pi
     }
 }
 
