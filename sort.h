@@ -20,6 +20,7 @@ class sort_algorithms{
     void swap(I *first, I *second);
     void merge(I left, I middle, I right);
     int partition(int low, int high);
+    void build_heap(int n, int root);
 
     // Main methods
 
@@ -28,6 +29,7 @@ class sort_algorithms{
     void bubble_sort();
     void merge_sort(int left, int right);
     void quick_sort(int low,int high);
+    void heap_sort();
 
     virtual ~sort_algorithms(){
         unsorted->clear();
