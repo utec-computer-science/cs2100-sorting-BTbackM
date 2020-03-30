@@ -10,7 +10,8 @@ int main(){
     *unsorted = {'e','d','c','b','a'};
     sort_algorithms<char> test(unsorted);
     // test.insert_sort(); // Works
-    test.selection_sort();
+    // test.selection_sort(); // Works
+    test.bubble_sort();
     cout << *unsorted << endl;
     return 0;
 }

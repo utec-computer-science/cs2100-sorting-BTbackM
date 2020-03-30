@@ -22,6 +22,7 @@ class sort_algorithms{
 
     void insert_sort();
     void selection_sort();
+    void bubble_sort();
 
     virtual ~sort_algorithms(){
         unsorted->clear();
