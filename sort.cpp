@@ -40,7 +40,7 @@ void sort_algorithms<I>::insert_sort(){
 
 template<class I>
 void sort_algorithms<I>::selection_sort() {
-    for(int i = 0; i < unsorted->size() - 1 ; i++){
+    for(int i = 0; i < int(unsorted->size()) - 1 ; i++){
         int it = i;
         for(int j = i + 1 ; j < unsorted->size() ; j++){
             if(unsorted->at(j) < unsorted->at(it)){
@@ -50,4 +50,15 @@ void sort_algorithms<I>::selection_sort() {
         swap(&unsorted->at(it), &unsorted->at(i));
     }
 }
+
+template<class I>
+void sort_algorithms<I>::bubble_sort() {
+    for (int i = 0; i < int(unsorted->size()) - 1; i++){
+        for (int j = 0; j < unsorted->size() - i - 1; j++){
+            if (unsorted->at(j) > unsorted->at(j + 1))
+                swap(&unsorted->at(j), &unsorted->at(j + 1));
+        }
+    }
+}
+
 
