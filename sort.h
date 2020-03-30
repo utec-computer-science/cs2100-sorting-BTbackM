@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <ostream>
+#include <algorithm>
 #include <vector>
 #include <math.h>
 
@@ -31,6 +32,7 @@ class sort_algorithms{
     void quick_sort(int low,int high);
     void heap_sort();
     void shell_sort();
+    void bin_sort();
 
     virtual ~sort_algorithms(){
         unsorted->clear();

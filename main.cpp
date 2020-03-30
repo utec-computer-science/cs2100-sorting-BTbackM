@@ -15,7 +15,8 @@ int main(){
     // test.merge_sort(0, 4); // Works
     // test.quick_sort(0, 4); //Works
     // test.heap_sort(); // Works
-    test.shell_sort();
+    // test.shell_sort(); // Works
+    test.bin_sort(); // ~Works
     cout << *unsorted << endl;
     return 0;
 }
