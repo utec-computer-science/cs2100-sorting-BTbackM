@@ -11,7 +11,8 @@ int main(){
     sort_algorithms<char> test(unsorted);
     // test.insert_sort(); // Works
     // test.selection_sort(); // Works
-    test.bubble_sort();
+    // test.bubble_sort(); // Works
+    test.merge_sort(0, 4);
     cout << *unsorted << endl;
     return 0;
 }
