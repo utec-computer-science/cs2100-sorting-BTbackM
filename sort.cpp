@@ -178,3 +178,19 @@ void sort_algorithms<I>::shell_sort(){
         } 
     } 
 }
+
+template <class I>
+void sort_algorithms<I>::bin_sort(){
+    int n = unsorted->size();
+    vector<I> tmp[n];
+    for (int i = 0; i < n; i++){
+        int bin = n*unsorted->at(i);
+        tmp[bin].push_back(unsorted->at(i));
+    }
+    for (int i = 0; i < n; i++)
+        sort(tmp[i].begin(), tmp[i].end());
+    int index = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < tmp[i].size(); j++)
+            unsorted->at(index++) = tmp[i][j];
+}
