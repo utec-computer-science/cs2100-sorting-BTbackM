@@ -164,3 +164,17 @@ void sort_algorithms<I>::heap_sort(){
         build_heap(i,0);
     } 
 }
+
+template <class I>
+void sort_algorithms<I>::shell_sort(){
+    int n = unsorted->size();
+    for (int iter = n / 2; iter > 0; iter /= 2) {
+        for (int i = iter; i < n; i += 1) {
+            int tmp = unsorted->at(i);
+            int j; 
+            for (j = i; j >= iter && unsorted->at(j - iter) > tmp; j -= iter) 
+                unsorted->at(j) = unsorted->at(j - iter);
+            unsorted->at(j) = tmp;
+        } 
+    } 
+}

@@ -30,6 +30,7 @@ class sort_algorithms{
     void merge_sort(int left, int right);
     void quick_sort(int low,int high);
     void heap_sort();
+    void shell_sort();
 
     virtual ~sort_algorithms(){
         unsorted->clear();

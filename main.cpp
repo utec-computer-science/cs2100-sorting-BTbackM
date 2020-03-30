@@ -14,7 +14,8 @@ int main(){
     // test.bubble_sort(); // Works
     // test.merge_sort(0, 4); // Works
     // test.quick_sort(0, 4); //Works
-    test.heap_sort(); // Works
+    // test.heap_sort(); // Works
+    test.shell_sort();
     cout << *unsorted << endl;
     return 0;
 }
