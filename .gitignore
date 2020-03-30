@@ -1,0 +1,6 @@
+/src
+/obj
+/.vscode
+*.d
+*.gch
+Makefile
