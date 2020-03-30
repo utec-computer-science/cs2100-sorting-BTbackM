@@ -4,6 +4,7 @@
 #include <iostream>
 #include <ostream>
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -17,12 +18,14 @@ class sort_algorithms{
     // Additional methods
 
     void swap(I *first, I *second);
+    void merge(I left, I middle, I right);
 
     // Main methods
 
     void insert_sort();
     void selection_sort();
     void bubble_sort();
+    void merge_sort(I left, I right);
 
     virtual ~sort_algorithms(){
         unsorted->clear();
