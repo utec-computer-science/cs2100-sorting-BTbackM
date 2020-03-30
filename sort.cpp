@@ -72,6 +72,21 @@ int sort_algorithms<I>::partition(int low,int high){
         return (i + 1);
 }
 
+template <class I>
+void sort_algorithms<I>::build_heap(int n, int root){
+    I higher = root;
+    I left = 2*root + 1;
+    I right = 2*root + 2;
+
+    if(left < n and unsorted->at(left) > unsorted->at(higher))
+        higher = left;
+    if(right < n and unsorted->at(right) > unsorted->at(higher))
+        higher =  right;
+    if(higher != root){
+        swap(&unsorted->at(root), &unsorted->at(higher));
+        build_heap(n, higher);
+    } 
+}
 
 // Main methods
 
@@ -139,3 +154,13 @@ void sort_algorithms<I>::quick_sort(int low,int high){
     }
 }
 
+template <class I>
+void sort_algorithms<I>::heap_sort(){
+    for(int i = unsorted->size() / 2 - 1; i >= 0; i--)
+        build_heap(unsorted->size(), i);
+
+    for(int i = unsorted->size() - 1; i >= 0; i--) {
+        swap(&unsorted->at(0), &unsorted->at(i));
+        build_heap(i,0);
+    } 
+}

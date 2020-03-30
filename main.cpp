@@ -13,7 +13,8 @@ int main(){
     // test.selection_sort(); // Works
     // test.bubble_sort(); // Works
     // test.merge_sort(0, 4); // Works
-    test.quick_sort(0, 4);
+    // test.quick_sort(0, 4); //Works
+    test.heap_sort(); // Works
     cout << *unsorted << endl;
     return 0;
 }
